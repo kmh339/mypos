@@ -96,7 +96,7 @@ packages:
     source: hosted
     version: "2.1.0"
   json_annotation:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: json_annotation
       url: "https://pub.dartlang.org"
