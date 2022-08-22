@@ -1,3 +1,4 @@
+import 'package:domain/domain.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -6,6 +7,10 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
+
+  void addOne() {
+
+  }
 
   @override
   Widget build(BuildContext context) {
