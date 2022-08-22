@@ -53,14 +53,14 @@ packages:
   data:
     dependency: "direct main"
     description:
-      path: data
+      path: "packages/data"
       relative: true
     source: path
     version: "0.0.1"
   domain:
     dependency: "direct main"
     description:
-      path: domain
+      path: "packages/domain"
       relative: true
     source: path
     version: "0.0.1"
@@ -140,7 +140,7 @@ packages:
   presentation:
     dependency: "direct main"
     description:
-      path: presentation
+      path: "packages/presentation"
       relative: true
     source: path
     version: "0.0.1"
