@@ -15,10 +15,13 @@ dependencies:
   domain:
     path: ../domain
   equatable: ^2.0.5
+  mockito: ^5.3.0
+  bloc_test: ^9.1.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
+  build_runner: ^2.2.0
 
 flutter:
