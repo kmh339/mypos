@@ -29,8 +29,8 @@ class MockProductRepository extends _i1.Mock implements _i2.ProductRepository {
   }
 
   @override
-  _i3.Future<List<_i4.Product>> getProducts() =>
-      (super.noSuchMethod(Invocation.method(#getProducts, []),
+  _i3.Future<List<_i4.Product>> getProducts({String? path}) =>
+      (super.noSuchMethod(Invocation.method(#getProducts, [], {#path: path}),
               returnValue: _i3.Future<List<_i4.Product>>.value(<_i4.Product>[]))
           as _i3.Future<List<_i4.Product>>);
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:presentation/components/product_grid_view.dart';
+import 'package:presentation/pages/product/product_page.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({
@@ -11,14 +11,7 @@ class MainPage extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         minimum: const EdgeInsets.symmetric(vertical: 20),
-        child: Column(
-          children: <Widget>[
-            Text('main page'),
-            ProductGridView(
-              products: [],
-            ),
-          ],
-        ),
+        child: ProductPage(),
       ),
     );
   }
