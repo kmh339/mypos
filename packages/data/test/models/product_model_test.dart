@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:data/models/product_model.dart';
+import 'package:domain/entities/product.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import '../helpers/helper.dart';
@@ -11,7 +12,7 @@ void main() {
       TestWidgetsFlutterBinding.ensureInitialized();
     });
 
-    test('상품정보 from json', () async {
+    test('get ProductModel from json', () async {
       final Map<String, dynamic> productResponse = jsonDecode(
         await readJson('mock_product_response.json'),
       );
@@ -20,5 +21,20 @@ void main() {
 
       expect(productModel, equals(productModel));
     });
+
+    test(
+      'get ProductEntity from ProductModel',
+      () async {
+        final Map<String, dynamic> productResponse = jsonDecode(
+            await readJson('mock_product_response.json'),
+        );
+
+        final ProductModel productModel = ProductModel.fromJson(productResponse);
+
+        final Product product = productModel.toEntity();
+
+        expect(product, equals(product));
+      },
+    );
   });
 }

@@ -115,9 +115,10 @@ class __$$_ProductModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_ProductModel implements _ProductModel {
+class _$_ProductModel extends _ProductModel {
   const _$_ProductModel(
-      {required this.id, required this.name, required this.price});
+      {required this.id, required this.name, required this.price})
+      : super._();
 
   factory _$_ProductModel.fromJson(Map<String, dynamic> json) =>
       _$$_ProductModelFromJson(json);
@@ -165,11 +166,12 @@ class _$_ProductModel implements _ProductModel {
   }
 }
 
-abstract class _ProductModel implements ProductModel {
+abstract class _ProductModel extends ProductModel {
   const factory _ProductModel(
       {required final int id,
       required final String name,
       required final double price}) = _$_ProductModel;
+  const _ProductModel._() : super._();
 
   factory _ProductModel.fromJson(Map<String, dynamic> json) =
       _$_ProductModel.fromJson;
