@@ -32,3 +32,4 @@ flutter:
   # To add assets to your package, add an assets section, like this:
    assets:
      - test/helpers/mock_data/
+     - lib/helpers/mock_data/
