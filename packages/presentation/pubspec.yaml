@@ -14,6 +14,7 @@ dependencies:
   flutter_bloc: ^8.1.1
   domain:
     path: ../domain
+  equatable: ^2.0.5
 
 dev_dependencies:
   flutter_test:
