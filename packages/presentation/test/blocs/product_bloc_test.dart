@@ -43,6 +43,23 @@ void main() {
           ProductState(status: ProductStatus.success, products: products),
         ],
       );
+
+      blocTest(
+        'emits total price plus 1000 when ProductSelected is added',
+        build: () => ProductBloc(
+          productRepository: productRepository,
+        ),
+        act: (ProductBloc bloc) => bloc.add(
+          ProductSelected(price: 1000.0),
+        ),
+        wait: const Duration(seconds: 1),
+        expect: () => <ProductState>[
+          ProductState(
+            status: ProductStatus.success,
+            totalPrice: 1000.0,
+          ),
+        ],
+      );
     },
   );
 }

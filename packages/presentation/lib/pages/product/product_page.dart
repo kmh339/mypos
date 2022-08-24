@@ -42,7 +42,7 @@ class ProductPage extends StatelessWidget {
                     Align(
                       alignment: Alignment.centerRight,
                       child: Text(
-                        '총 가격 : 0 원',
+                        '총 가격 : ${state.totalPrice} 원',
                         style: TextStyle(
                           color: Colors.black,
                           fontSize: 20,

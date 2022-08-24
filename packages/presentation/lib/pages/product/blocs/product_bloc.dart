@@ -15,6 +15,7 @@ class ProductBloc extends Bloc<ProductEvent, ProductState> {
   })  : _productRepository = productRepository,
         super(const ProductState()) {
     on<ProductListFetched>(_onProductListFetched);
+    on<ProductSelected>(_onProductSelected);
   }
 
   final ProductRepository _productRepository;
@@ -35,6 +36,18 @@ class ProductBloc extends Bloc<ProductEvent, ProductState> {
       state.copyWith(
         status: ProductStatus.success,
         products: products,
+      ),
+    );
+  }
+
+  Future<void> _onProductSelected(
+    ProductSelected event,
+    Emitter<ProductState> emit,
+  ) async {
+    emit(
+      state.copyWith(
+        status: ProductStatus.success,
+        totalPrice: state.totalPrice + event.price,
       ),
     );
   }

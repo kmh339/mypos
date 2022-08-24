@@ -8,3 +8,16 @@ abstract class ProductEvent extends Equatable {
 }
 
 class ProductListFetched extends ProductEvent {}
+
+class ProductSelected extends ProductEvent {
+  const ProductSelected({
+    required this.price,
+  });
+
+  final double price;
+
+  @override
+  List<Object?> get props => [
+        price,
+      ];
+}

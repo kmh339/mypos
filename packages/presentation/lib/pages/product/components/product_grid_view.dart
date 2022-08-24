@@ -1,5 +1,7 @@
 import 'package:domain/entities/product.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:presentation/pages/product/blocs/product_bloc.dart';
 
 class ProductGridView extends StatelessWidget {
   const ProductGridView({
@@ -19,7 +21,11 @@ class ProductGridView extends StatelessWidget {
       ),
       itemCount: products.length,
       itemBuilder: (_, int index) => ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          context.read<ProductBloc>().add(
+                ProductSelected(price: products[index].price),
+              );
+        },
         style: ElevatedButton.styleFrom(
           primary: Colors.blue,
           elevation: 2,
