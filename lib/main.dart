@@ -2,9 +2,11 @@ import 'package:data/repositories/product_repository_impl.dart';
 import 'package:domain/repositories/product_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:my_pos/utils/main_bloc_observer.dart';
 import 'package:presentation/pages/main/main_page.dart';
 
 void main() {
+  Bloc.observer = MainBlocObserver();
   runApp(const MyApp());
 }
 
