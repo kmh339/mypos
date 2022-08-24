@@ -1,0 +1,2 @@
+extension DoubleToString on double {
+}

@@ -44,7 +44,7 @@ class ProductGridView extends StatelessWidget {
               ),
             ),
             Text(
-              products[index].price.toString(),
+              '${products[index].price.toInt()}원',
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 24,
