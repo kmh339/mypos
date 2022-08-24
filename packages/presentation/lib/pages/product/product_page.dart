@@ -16,21 +16,46 @@ class ProductPage extends StatelessWidget {
         productRepository: context.read<ProductRepository>(),
       )..add(ProductListFetched()),
       child: Scaffold(
-        body: Center(
-          child: BlocBuilder<ProductBloc, ProductState>(
-            builder: (_, ProductState state) {
-              if (state.status == ProductStatus.loading) {
-                return CircularProgressIndicator();
-              }
+        body: SafeArea(
+          minimum: EdgeInsets.all(20),
+          child: Center(
+            child: BlocBuilder<ProductBloc, ProductState>(
+              builder: (_, ProductState state) {
+                if (state.status == ProductStatus.loading) {
+                  return CircularProgressIndicator();
+                }
 
-              if (state.status == ProductStatus.failure) {
-                return Text('failure');
-              }
+                if (state.status == ProductStatus.failure) {
+                  return Text('failure');
+                }
 
-              return ProductGridView(
-                products: state.products,
-              );
-            },
+                return Column(
+                  children: [
+                    Expanded(
+                      child: ProductGridView(
+                        products: state.products,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 32,
+                    ),
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: Text(
+                        '총 가격 : 0 원',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 20,
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 32,
+                    ),
+                  ],
+                );
+              },
+            ),
           ),
         ),
       ),

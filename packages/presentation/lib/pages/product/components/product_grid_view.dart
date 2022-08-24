@@ -18,18 +18,31 @@ class ProductGridView extends StatelessWidget {
         crossAxisSpacing: 10,
       ),
       itemCount: products.length,
-      itemBuilder: (_, int index) => Container(
-        decoration: BoxDecoration(
-          color: Colors.blue,
-          borderRadius: BorderRadius.circular(8),
+      itemBuilder: (_, int index) => ElevatedButton(
+        onPressed: () {},
+        style: ElevatedButton.styleFrom(
+          primary: Colors.blue,
+          elevation: 2,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8),
+          ),
         ),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
               products[index].name,
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 32,
+              ),
             ),
             Text(
               products[index].price.toString(),
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 24,
+              ),
             ),
           ],
         ),
