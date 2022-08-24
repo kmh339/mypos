@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:domain/entities/product.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -36,18 +37,27 @@ class ProductGridView extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              products[index].name,
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 32,
+            Expanded(
+              child: Center(
+                child: AutoSizeText(
+                  products[index].name,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 32,
+                  ),
+                ),
               ),
             ),
-            Text(
-              '${products[index].price.toInt()}원',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 24,
+            Expanded(
+              child: Center(
+                child: AutoSizeText(
+                  '${products[index].price.toInt()}원',
+                  maxLines: 1,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 24,
+                  ),
+                ),
               ),
             ),
           ],
